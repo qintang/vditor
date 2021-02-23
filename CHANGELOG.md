@@ -2,6 +2,16 @@
 
 ### 升级
 
+* 3.7
+  * `preview` 静态方法添加 `mode` 配置
+  * 大纲 DOM 结构和 class 变更
+  * 添加 `options.undoDelay` 配置
+  * 添加 `options.counter.after` 回调方法
+  * 添加 `previewImage` 静态方法
+  * 添加 `options.fullscreen.index`
+  * 移除`options.preview.markdown.chinesePunct` 配置
+  * `options.outline` 修改为 `{ enable: boolean, position: "left" | "right" }`
+  * `toolbar.click` 参数修改为 `event: Event, vditor: IVditor`
 * 3.6
  * `options.preview.actions` 添加 `tooltip` 
  * `mermaidRender` 添加 `theme` 参数 
@@ -86,9 +96,44 @@
 * [open issues](https://github.com/Vanessa219/vditor/issues)
 * [346](https://github.com/Vanessa219/vditor/issues/346) 内容主题推荐（长期有效） `改进功能`
 
-### v3.7.6 / 2021-01-xx
+### v3.8.2 / 2021-02-xx
+
+* [928](https://github.com/Vanessa219/vditor/issues/928) Mathjax 资源缺失及添加 license `修复缺陷`
+* [720](https://github.com/Vanessa219/vditor/issues/720) 在光标位置插入内容的问题 `改进功能`
+* [751](https://github.com/Vanessa219/vditor/issues/751) firefox 代码块中 enter 键换行问题 `修复缺陷`
+* [923](https://github.com/Vanessa219/vditor/issues/923) 隐藏预览操作栏 `改进功能`
+
+### v3.8.1 / 2021-02-04
+
+* [921](https://github.com/Vanessa219/vditor/issues/921) MS Word 表格粘贴问题 `修复缺陷`
+* [922](https://github.com/Vanessa219/vditor/issues/922) MS Excel 粘贴带图表格问题 `修复缺陷`
+* [904](https://github.com/Vanessa219/vditor/issues/904) wysiwyg 和 ir 模式表格增加向上插入行和向左插入列 `改进功能`
+* [920](https://github.com/Vanessa219/vditor/issues/920) ” 无法输入 `修复缺陷`
+* [919](https://github.com/Vanessa219/vditor/issues/919) 支持外部文本内容拖拽进入编辑器 `改进功能`
+* [917](https://github.com/Vanessa219/vditor/issues/917) intsertValue无法一次添加多行markdown内容 `修复缺陷`
+* [910](https://github.com/Vanessa219/vditor/issues/910) 编辑列表内容时出现的问题 `改进功能`
+* [913](https://github.com/Vanessa219/vditor/pull/913) 支持plantuml `引入特性`
+* [907](https://github.com/Vanessa219/vditor/issues/907) mathjax 在method.min.js 中preview 显示错误 `修复缺陷`
+* [909](https://github.com/Vanessa219/vditor/issues/909) toc 和大纲中数学公式显示问题修复 `修复缺陷`
+* [908](https://github.com/Vanessa219/vditor/issues/908) 粘贴不了 MS Office Excel 内容的问题 `修复缺陷`
+* 文档修改
+  * 3.8.0
+    * 添加 plantumlRender 方法
+    * options.input 移除 previewElement 参数
+  * 3.8.1
+    * 添加表格增加向上插入行 ⇧⌘F 和向左插入列 ⇧⌘G 的快捷键
+    * 快捷键配置格式修改为 ⇧⌘[] / ⌘[] / ⌥⌘[]
   
-### v3.7.5 / 2021-01-06
+### v3.7.7 / 2021-01-19
+
+* [903](https://github.com/Vanessa219/vditor/issues/903) 使用 setValue 后第一次输入无法撤销 `修复缺陷`
+* [902](https://github.com/Vanessa219/vditor/issues/902) hint 内容为 md 时，需进行渲染 `改进功能`
+* [900](https://github.com/Vanessa219/vditor/issues/900) img标签图片无法显示 `修复缺陷`
+* [901](https://github.com/Vanessa219/vditor/issues/901) 预览区域代码点击复制无效 `修复缺陷`
+* [890](https://github.com/Vanessa219/vditor/issues/890) Can not delete the special tag(Wysiwyg mode) `修复缺陷`
+* [894](https://github.com/Vanessa219/vditor/issues/894) 代码块下紧跟一张图片，使用回退键删除图片时光标跑到代码块里，图片不能删除 `修复缺陷`
+* [659](https://github.com/Vanessa219/vditor/issues/659) IR 模式复制粘贴 <kbd> 问题 `修复缺陷`
+* [888](https://github.com/Vanessa219/vditor/issues/888) 大纲点击错误 `修复缺陷`
 * [884](https://github.com/Vanessa219/vditor/issues/884) 工具栏自定义按钮禁用 `改进功能`
 * [877](https://github.com/Vanessa219/vditor/issues/877) 数学公式输入删除生成节点 `修复缺陷`
 * [882](https://github.com/Vanessa219/vditor/issues/882) 改进 HTML 转换 Markdown 时加粗、斜体等空格的处理 `改进功能`
@@ -124,7 +169,7 @@
     * 添加 `options.undoDelay` 配置
     * 添加 `options.counter.after` 回调方法
   * 3.7.2
-    * 添加 `previewImg` 静态方法
+    * 添加 `previewImage` 静态方法
   * 3.7.3
     * 添加 `options.fullscreen.index`
   * 3.7.4

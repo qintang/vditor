@@ -11,6 +11,7 @@ import {mermaidRender} from "./ts/markdown/mermaidRender";
 import {mindmapRender} from "./ts/markdown/mindmapRender";
 import {plantumlRender} from "./ts/markdown/plantumlRender";
 import {outlineRender} from "./ts/markdown/outlineRender";
+import {plantumlRender} from "./ts/markdown/plantumlRender";
 import {md2html, previewRender} from "./ts/markdown/previewRender";
 import {speechRender} from "./ts/markdown/speechRender";
 import { previewImage } from "./ts/preview/image";
