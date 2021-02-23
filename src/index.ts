@@ -277,24 +277,23 @@ class Vditor extends VditorMethod {
 
     /** 在焦点处插入内容，并默认进行 Markdown 渲染 */
     public insertValue(value: string, render = true) {
-        const range = getEditorRange(this.vditor[this.vditor.currentMode].element);
+        const range = getEditorRange(this.vditor);
         range.collapse(true);
-        // https://github.com/Vanessa219/vditor/issues/716 需使用 insertText，否则需要重写方法，不能使用 execCommand
+        const tmpElement = document.createElement("template");
+        tmpElement.innerHTML = value;
+        range.insertNode(tmpElement.content.cloneNode(true));
         if (this.vditor.currentMode === "sv") {
             this.vditor.sv.preventInput = true;
-            document.execCommand("insertText", false, value);
             if (render) {
                 inputEvent(this.vditor);
             }
         } else if (this.vditor.currentMode === "wysiwyg") {
             this.vditor.wysiwyg.preventInput = true;
-            document.execCommand("insertText", false, value);
             if (render) {
                 input(this.vditor, getSelection().getRangeAt(0));
             }
         } else if (this.vditor.currentMode === "ir") {
             this.vditor.ir.preventInput = true;
-            document.execCommand("insertText", false, value);
             if (render) {
                 irInput(this.vditor, getSelection().getRangeAt(0), true);
             }
@@ -306,13 +305,13 @@ class Vditor extends VditorMethod {
         if (this.vditor.currentMode === "sv") {
             this.vditor.sv.element.innerHTML = this.vditor.lute.SpinVditorSVDOM(markdown);
             processSVAfterRender(this.vditor, {
-                enableAddUndoStack: clearStack,
+                enableAddUndoStack: true,
                 enableHint: false,
                 enableInput: false,
             });
         } else if (this.vditor.currentMode === "wysiwyg") {
             renderDomByMd(this.vditor, markdown, {
-                enableAddUndoStack: clearStack,
+                enableAddUndoStack: true,
                 enableHint: false,
                 enableInput: false,
             });
@@ -323,7 +322,7 @@ class Vditor extends VditorMethod {
                     processCodeRender(item, this.vditor);
                 });
             processAfterRender(this.vditor, {
-                enableAddUndoStack: clearStack,
+                enableAddUndoStack: true,
                 enableHint: false,
                 enableInput: false,
             });
@@ -427,7 +426,7 @@ class Vditor extends VditorMethod {
             });
             if (ids.length === 0) {
                 item.outerHTML = item.innerHTML;
-                getEditorRange(this.vditor.element).collapse(true);
+                getEditorRange(this.vditor).collapse(true);
             } else {
                 item.setAttribute("data-cmtids", ids.join(" "));
             }
