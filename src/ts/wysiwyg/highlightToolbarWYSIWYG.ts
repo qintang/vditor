@@ -1150,5 +1150,7 @@ const focusToElement = (event: KeyboardEvent, range: Range) => {
 };
 
 const customWysiwygToolbar = (vditor: IVditor, type: TWYSISYGToolbar) => {
-    vditor.options.customWysiwygToolbar(type, vditor.wysiwyg.popover);
+    if (vditor.options.customWysiwygToolbar) {
+        vditor.options.customWysiwygToolbar(type, vditor.wysiwyg.popover);
+    }
 };
