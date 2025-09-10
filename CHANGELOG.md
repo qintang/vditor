@@ -3,6 +3,8 @@
 ### 升级
 
 * 3.11
+  * 添加 options.preview.markdown.sup
+  * 添加 options.preview.markdown.sub
   * 添加 options.customWysiwygToolbar
   * 添加 options.upload.base64ToLink
   * 添加 options.upload.xhr
@@ -28,9 +30,10 @@
 
 * [open issues](https://github.com/Vanessa219/vditor/issues)
 
-### v3.11.3
+### v3.11.3 / 2025-09
 
-* [升级 mermaid.js 11.6.0 至 11.11.0](https://github.com/Vanessa219/vditor/issues/1857)
+* [支持上标下标配置 `sup` `sub`](https://github.com/Vanessa219/vditor/issues/1850) `引入特性`
+* [升级 mermaid.js 11.6.0 至 11.11.0](https://github.com/Vanessa219/vditor/issues/1857) `改进功能`
 
 ### v3.11.2 / 2025-09-02
 
